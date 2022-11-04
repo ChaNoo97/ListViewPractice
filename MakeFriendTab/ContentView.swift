@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+  private var viewModel = ContentViewModel()
+  
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Button(action: {
+              viewModel.searchUser(peopleCount: 10)
+            }, label: {
+              Text("Test!")
+                .font(.system(size: 20))
+                .padding(20)
+                .cornerRadius(5)
+                .background(Color.cyan)
+            })
         }
         .padding()
     }
