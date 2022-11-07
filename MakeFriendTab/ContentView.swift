@@ -8,26 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
-  private var viewModel = ContentViewModel()
+  @ObservedObject var viewModel = ContentViewModel()
   
-    var body: some View {
-        VStack {
-            Button(action: {
-              viewModel.searchUser(peopleCount: 10)
-            }, label: {
-              Text("Test!")
-                .font(.system(size: 20))
-                .padding(20)
-                .cornerRadius(5)
-                .background(Color.cyan)
-            })
-        }
-        .padding()
+  var body: some View {
+    NavigationView {
+      
+      VStack(alignment: .center, spacing: 10) {
+        TextField("how many people", text: $viewModel.textFieldString)
+          .textFieldStyle(.plain)
+        
+        NavigationLink(
+          destination: {
+//            let vm = FriendViewModel(peopleCount: Int(viewModel.textFieldString) ?? 0)
+            NavigationLazyView(
+              FriendView(FriendViewModel(peopleCount: viewModel.getNumber()))
+            )
+//            FriendView(viewModel: FriendViewModel(peopleCount: Int(viewModel.textFieldString) ?? 0))
+          },
+          label: {
+            Text("NextViwe")
+              .font(.largeTitle)
+              .padding()
+              .background(Color.brown)
+              .cornerRadius(10)
+          }
+        )
+        .disabled(viewModel.isCanGoNext)
+      }
+      .padding(GlobalFunction.makeSidePadding(size: 20))
     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
