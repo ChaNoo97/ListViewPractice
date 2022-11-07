@@ -25,6 +25,8 @@ struct Result: Codable {
 }
 
 struct User: Codable {
+  // id 쓰면 serialization Failed 오류.. 해결 방법 고민중
+//  var id = UUID()
   var name: Name
   var picture: Picture
 }

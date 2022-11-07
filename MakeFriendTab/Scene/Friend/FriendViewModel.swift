@@ -14,16 +14,27 @@ class FriendViewModel: ObservableObject {
   
   var peopleCount: Int
   
+  let initSubject = PassthroughSubject<Void, Never>()
+  
   private var cancellabel = Set<AnyCancellable>()
   
   init(peopleCount: Int) {
     self.peopleCount = peopleCount
-    print("df")
-    print("people count \(peopleCount)")
-//    searchUser(peopleCount: peopleCount)
+    transform()
+    initSubject.send()
+  }
+  
+  func transform() {
+    initSubject
+      .throttle(for: 0.5, scheduler: RunLoop.main, latest: false)
+      .sink(receiveValue: { [weak self] in
+        guard let self = self else { return }
+        self.searchUser(peopleCount: self.peopleCount)
+        }).store(in: &cancellabel)
   }
   
   func searchUser(peopleCount: Int) {
+    print("start search! and peopleCount \(peopleCount)")
     SearchUserUseCase.searchUsers(peopleCount: peopleCount)
       .sink(receiveCompletion: { completion in
         switch completion {

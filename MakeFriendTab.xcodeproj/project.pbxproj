@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F967EBFF2918972F00EDEB6A /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967EBFE2918972F00EDEB6A /* NavigationLazyView.swift */; };
+		F967EC012918979F00EDEB6A /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967EC002918979F00EDEB6A /* FriendView.swift */; };
+		F967EC05291899C100EDEB6A /* GlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967EC04291899C000EDEB6A /* GlobalFunction.swift */; };
+		F967EC0729189E6F00EDEB6A /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967EC0629189E6F00EDEB6A /* FriendViewModel.swift */; };
 		F974302B2913CDAD004A94A5 /* MakeFriendTabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974302A2913CDAD004A94A5 /* MakeFriendTabApp.swift */; };
 		F974302D2913CDAD004A94A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974302C2913CDAD004A94A5 /* ContentView.swift */; };
 		F974302F2913CDAE004A94A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F974302E2913CDAE004A94A5 /* Assets.xcassets */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F967EBFE2918972F00EDEB6A /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
+		F967EC002918979F00EDEB6A /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
+		F967EC04291899C000EDEB6A /* GlobalFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunction.swift; sourceTree = "<group>"; };
+		F967EC0629189E6F00EDEB6A /* FriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewModel.swift; sourceTree = "<group>"; };
 		F97430272913CDAD004A94A5 /* MakeFriendTab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeFriendTab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F974302A2913CDAD004A94A5 /* MakeFriendTabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeFriendTabApp.swift; sourceTree = "<group>"; };
 		F974302C2913CDAD004A94A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +50,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F967EC082918F75300EDEB6A /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				F967EC0A2918F76600EDEB6A /* Friend */,
+				F967EC092918F75C00EDEB6A /* Content */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		F967EC092918F75C00EDEB6A /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				F974302C2913CDAD004A94A5 /* ContentView.swift */,
+				F97430442914A7B1004A94A5 /* ContentViewModel.swift */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		F967EC0A2918F76600EDEB6A /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				F967EC002918979F00EDEB6A /* FriendView.swift */,
+				F967EC0629189E6F00EDEB6A /* FriendViewModel.swift */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
 		F974301E2913CDAD004A94A5 = {
 			isa = PBXGroup;
 			children = (
@@ -61,9 +96,10 @@
 		F97430292913CDAD004A94A5 /* MakeFriendTab */ = {
 			isa = PBXGroup;
 			children = (
-				F97430442914A7B1004A94A5 /* ContentViewModel.swift */,
 				F974302A2913CDAD004A94A5 /* MakeFriendTabApp.swift */,
-				F974302C2913CDAD004A94A5 /* ContentView.swift */,
+				F967EC082918F75300EDEB6A /* Scene */,
+				F967EC04291899C000EDEB6A /* GlobalFunction.swift */,
+				F967EBFE2918972F00EDEB6A /* NavigationLazyView.swift */,
 				F97430422914A3E8004A94A5 /* SearchUserUseCase.swift */,
 				F97430402913D088004A94A5 /* SearchUserRouter.swift */,
 				F974302E2913CDAE004A94A5 /* Assets.xcassets */,
@@ -158,10 +194,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F967EC012918979F00EDEB6A /* FriendView.swift in Sources */,
 				F97430432914A3E8004A94A5 /* SearchUserUseCase.swift in Sources */,
+				F967EC0729189E6F00EDEB6A /* FriendViewModel.swift in Sources */,
+				F967EBFF2918972F00EDEB6A /* NavigationLazyView.swift in Sources */,
 				F974302D2913CDAD004A94A5 /* ContentView.swift in Sources */,
 				F974302B2913CDAD004A94A5 /* MakeFriendTabApp.swift in Sources */,
 				F97430412913D088004A94A5 /* SearchUserRouter.swift in Sources */,
+				F967EC05291899C100EDEB6A /* GlobalFunction.swift in Sources */,
 				F97430452914A7B1004A94A5 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

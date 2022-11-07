@@ -15,15 +15,11 @@ struct ContentView: View {
       
       VStack(alignment: .center, spacing: 10) {
         TextField("how many people", text: $viewModel.textFieldString)
-          .textFieldStyle(.plain)
+          .textFieldStyle(.roundedBorder)
         
-        NavigationLink(
-          destination: {
-//            let vm = FriendViewModel(peopleCount: Int(viewModel.textFieldString) ?? 0)
-            NavigationLazyView(
-              FriendView(FriendViewModel(peopleCount: viewModel.getNumber()))
-            )
-//            FriendView(viewModel: FriendViewModel(peopleCount: Int(viewModel.textFieldString) ?? 0))
+        Button(
+          action: {
+            viewModel.buttonSubject.send()
           },
           label: {
             Text("NextViwe")
@@ -31,11 +27,20 @@ struct ContentView: View {
               .padding()
               .background(Color.brown)
               .cornerRadius(10)
-          }
+          }).disabled(viewModel.isCanGoNext)
+        
+        NavigationLink(
+          isActive: $viewModel.goToNext,
+          destination: {
+            NavigationLazyView(
+              FriendView(FriendViewModel(peopleCount: Int(viewModel.textFieldString) ?? 0))
+            )
+          },
+          label: { }
         )
-        .disabled(viewModel.isCanGoNext)
       }
       .padding(GlobalFunction.makeSidePadding(size: 20))
+      
     }
   }
 }

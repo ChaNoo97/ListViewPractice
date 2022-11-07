@@ -12,11 +12,19 @@ struct FriendView: View {
   @ObservedObject var viewModel: FriendViewModel
   
   init(_ viewModel: FriendViewModel) {
+    print("friend view init")
     self.viewModel = viewModel
   }
   
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      Text("Hello")
+//      List(viewModel.users) { user in
+//        Text(user.name.first)
+//      }
     }
+  
+}
+
+extension FriendView {
   
 }
