@@ -24,16 +24,27 @@ struct Result: Codable {
   var results: [User]
 }
 
-struct User: Codable {
+struct User: Codable, Identifiable {
   // id 쓰면 serialization Failed 오류.. 해결 방법 고민중
-//  var id = UUID()
+  // codingKey 쓰면 해결 된다고?
+  var id = UUID()
+  var isFriend = Bool.random()
   var name: Name
   var picture: Picture
+  
+  private enum CodingKeys: String, CodingKey {
+    case name
+    case picture
+  }
 }
 
-struct Name: Codable {
+struct Name: Codable, CustomStringConvertible {
   var first: String
   var last: String
+  
+  var description: String {
+    return first + last
+  }
 }
 
 struct Picture: Codable {

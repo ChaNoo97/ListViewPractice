@@ -17,14 +17,60 @@ struct FriendView: View {
   }
   
     var body: some View {
-      Text("Hello")
-//      List(viewModel.users) { user in
-//        Text(user.name.first)
-//      }
+      NavigationView {
+        
+        List {
+          recommendFriendSection.listSectionSeparator(.hidden)
+          myFriendSection
+        }
+        .listStyle(.plain)
+//        List(viewModel.users) { user in
+//          FriendRow(user: user)
+//            .wrapToButton {
+//              print("wrapToButton")
+//            }
+//            .listRowSeparator(.hidden)
+//        }
+//        .listStyle(.plain)
+        
+      }
     }
   
 }
 
 extension FriendView {
+  var recommendFriendSection: some View {
+    Section("추천친구") {
+      Text("ddd")
+    }
+  }
   
+  var myFriendSection: some View {
+    Section("내친구") {
+      Text("dddd")
+    }
+  }
+}
+
+private struct ButtonWrapper: ViewModifier {
+  let action: () -> Void
+  
+  init(action: @escaping () -> Void) {
+    self.action = action
+  }
+  
+  func body(content: Content) -> some View {
+    Button(
+      action: action,
+      label: { content }
+    )
+  }
+}
+
+extension View {
+  public func wrapToButton(
+    action: @escaping () -> Void
+  ) -> some View {
+    modifier(ButtonWrapper(action: action))
+  }
 }

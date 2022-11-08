@@ -11,6 +11,8 @@
 		F967EC012918979F00EDEB6A /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967EC002918979F00EDEB6A /* FriendView.swift */; };
 		F967EC05291899C100EDEB6A /* GlobalFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967EC04291899C000EDEB6A /* GlobalFunction.swift */; };
 		F967EC0729189E6F00EDEB6A /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967EC0629189E6F00EDEB6A /* FriendViewModel.swift */; };
+		F967EC0C2919DF0100EDEB6A /* FriendRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967EC0B2919DF0100EDEB6A /* FriendRow.swift */; };
+		F967EC102919FAD400EDEB6A /* FriendRowActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F967EC0F2919FAD400EDEB6A /* FriendRowActionButton.swift */; };
 		F974302B2913CDAD004A94A5 /* MakeFriendTabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974302A2913CDAD004A94A5 /* MakeFriendTabApp.swift */; };
 		F974302D2913CDAD004A94A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974302C2913CDAD004A94A5 /* ContentView.swift */; };
 		F974302F2913CDAE004A94A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F974302E2913CDAE004A94A5 /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 		F967EC002918979F00EDEB6A /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
 		F967EC04291899C000EDEB6A /* GlobalFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunction.swift; sourceTree = "<group>"; };
 		F967EC0629189E6F00EDEB6A /* FriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewModel.swift; sourceTree = "<group>"; };
+		F967EC0B2919DF0100EDEB6A /* FriendRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRow.swift; sourceTree = "<group>"; };
+		F967EC0F2919FAD400EDEB6A /* FriendRowActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRowActionButton.swift; sourceTree = "<group>"; };
 		F97430272913CDAD004A94A5 /* MakeFriendTab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeFriendTab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F974302A2913CDAD004A94A5 /* MakeFriendTabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeFriendTabApp.swift; sourceTree = "<group>"; };
 		F974302C2913CDAD004A94A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 			children = (
 				F967EC002918979F00EDEB6A /* FriendView.swift */,
 				F967EC0629189E6F00EDEB6A /* FriendViewModel.swift */,
+				F967EC0B2919DF0100EDEB6A /* FriendRow.swift */,
+				F967EC0F2919FAD400EDEB6A /* FriendRowActionButton.swift */,
 			);
 			path = Friend;
 			sourceTree = "<group>";
@@ -194,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F967EC102919FAD400EDEB6A /* FriendRowActionButton.swift in Sources */,
 				F967EC012918979F00EDEB6A /* FriendView.swift in Sources */,
 				F97430432914A3E8004A94A5 /* SearchUserUseCase.swift in Sources */,
 				F967EC0729189E6F00EDEB6A /* FriendViewModel.swift in Sources */,
@@ -202,6 +209,7 @@
 				F974302B2913CDAD004A94A5 /* MakeFriendTabApp.swift in Sources */,
 				F97430412913D088004A94A5 /* SearchUserRouter.swift in Sources */,
 				F967EC05291899C100EDEB6A /* GlobalFunction.swift in Sources */,
+				F967EC0C2919DF0100EDEB6A /* FriendRow.swift in Sources */,
 				F97430452914A7B1004A94A5 /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
